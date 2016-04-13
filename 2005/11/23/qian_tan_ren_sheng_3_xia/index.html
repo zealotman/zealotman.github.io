@@ -1,0 +1,558 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="文/苏柏亚
+（续上）
+三计算机代码是一段由程序员编写好的指令序列，在正常情况下，每段代码都会按照预定的方式运行，得到预定的结果。在这节，我会简单分析一下某些人身上的一些程序片断及程序代码，然后看一下这些代码的运行过程及结果。
+程序代码的本质是什么？是一个个判断，是一个个结论。例如“男大当婚，女大当嫁”这句话的意思是一个人到了合适的年龄就应该结婚了，这段程序所对应的程序代码如下：男（女）人长大－ &amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浅谈人生（三）－－程序人生（下）">
+<meta property="og:url" content="http://zealotman.github.io/index.html/2005/11/23/qian_tan_ren_sheng_3_xia/index.html">
+<meta property="og:site_name" content="苏柏亚的天空">
+<meta property="og:description" content="文/苏柏亚
+（续上）
+三计算机代码是一段由程序员编写好的指令序列，在正常情况下，每段代码都会按照预定的方式运行，得到预定的结果。在这节，我会简单分析一下某些人身上的一些程序片断及程序代码，然后看一下这些代码的运行过程及结果。
+程序代码的本质是什么？是一个个判断，是一个个结论。例如“男大当婚，女大当嫁”这句话的意思是一个人到了合适的年龄就应该结婚了，这段程序所对应的程序代码如下：男（女）人长大－ &amp;">
+<meta property="og:updated_time" content="2016-04-13T14:38:40.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="浅谈人生（三）－－程序人生（下）">
+<meta name="twitter:description" content="文/苏柏亚
+（续上）
+三计算机代码是一段由程序员编写好的指令序列，在正常情况下，每段代码都会按照预定的方式运行，得到预定的结果。在这节，我会简单分析一下某些人身上的一些程序片断及程序代码，然后看一下这些代码的运行过程及结果。
+程序代码的本质是什么？是一个个判断，是一个个结论。例如“男大当婚，女大当嫁”这句话的意思是一个人到了合适的年龄就应该结婚了，这段程序所对应的程序代码如下：男（女）人长大－ &amp;">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> 浅谈人生（三）－－程序人生（下） | 苏柏亚的天空 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">苏柏亚的天空</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                浅谈人生（三）－－程序人生（下）
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2005-11-23T17:29:59+11:00" content="2005-11-23">
+              2005-11-23
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">in</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/苏柏亚文集/" itemprop="url" rel="index">
+                    <span itemprop="name">苏柏亚文集</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>文/苏柏亚</p>
+<p>（续上）</p>
+<h1 id="三"><a href="#三" class="headerlink" title="三"></a>三</h1><p>计算机代码是一段由程序员编写好的指令序列，在正常情况下，每段代码都会按照预定的方式运行，得到预定的结果。在这节，我会简单分析一下某些人身上的一些程序片断及程序代码，然后看一下这些代码的运行过程及结果。</p>
+<p>程序代码的本质是什么？是一个个判断，是一个个结论。例如“男大当婚，女大当嫁”这句话的意思是一个人到了合适的年龄就应该结婚了，这段程序所对应的程序代码如下：男（女）人长大－ &gt; 结婚（“－ &gt; ”代表代码的下一步）。如果某个人的脑海里存在着这段代码，这段代码在符合前提条件的情况下会被大脑无意识地执行。如果不出意外，当这个人长大后，很容易会掉进为结婚而结婚的误区，对于结婚的对象的要求会随着年龄的增长无限降低，对于婚姻对象对自己人生的重要性，什么样的人适合自己等因素却置之不理，因为某段关于婚姻的代码正在执行。假如一个人脑海里没有“男大当婚，女大当嫁”这段程序，他（她）往往不会为了结婚而结婚，在找不到理想婚姻对象的情况下会选择继续寻找合适的对象甚至当个独身主义者。“夫妻本是同林鸟，大难临头各自飞”是另一段程序，该程序对应的程序代码是“夫妻遭遇困境－ &gt; 维护各自利益”。如果一个人脑海里有这段程序，一旦夫妻遭遇困境，该程序代码马上开始运行，下一步就是维护自己的利益而不顾对方的死活。与之相反的其中一段程序为“一夜夫妻百日恩”，此程序对应的程序代码是“身处困境－ &gt; 夫妻相亲相爱，共度时艰”。再举一个例子，“结婚后，爱情会变为亲情”这段程序的程序代码为“结婚－ &gt; 爱情消失 - － &gt; 亲情产生”。如果一个人脑海里有这段程序，他（她）一旦结婚，下一步就是爱情的消失，再下一步就是亲情的产生。由于没有爱情的婚姻占大多数，而以自我为中心的人也很多，因此这段错误的程序非常流行。对于那些对婚姻有追求的人，如果你希望成为幸福的那一小部分人，请把这段程序从你脑海里抹掉。爱情和亲情是两回事，爱情是维系幸福婚姻的纽带，“亲情”是维系不幸福婚姻的纽带（认为夫妻之间的感情是亲情但实质是爱情的情况不在此列）。……</p>
+<p>对大部分的人，“长大，然后结婚”是一段代码，已经成为其人生的一个机械的步骤。至于婚姻是什么，幸福的婚姻需要哪些要素，婚姻的对象有多重要等等问题却很少人在结婚前想过，那样的人的婚姻多数都是不幸福的。一个认为“夫妻本是同林鸟，大难临头各自飞”的人能够成为一个好丈夫或者好妻子吗？他（她）的婚姻可能幸福吗？不可能的。因为他（她）脑海里没有成为一个好丈夫（妻子）的程序，也没有获得幸福婚姻的程序。一个觉得“结婚后，爱情会变成亲情”的人，他（她）结婚后爱情多数会消失，因为大脑代码已经开始执行，执行到最后一步就完成了埋葬爱情这一步。……程序重要不重要？程序会不会影响自己的人生？</p>
+<p>一个人脑海里的程序究竟有多重要？一个人脑海里的程序究竟会如何影响他（她）的人生？一般人的人生轨迹如下：接受教育，找工作，结婚，买房，生儿育女，供孩子读书，打工直至退休……以上每个环节都有相应的程序代码，如无意外的话，那些可重复执行的程序不断地被写入下一代的脑子里，于是下一代又往往重复着父辈的人生轨迹。其实一个人的人生轨迹充满无限的可能性，关键在于不要让别人给自己的思想设限，要自己编写自己脑海里的程序，自己设计自己的人生轨迹，例如可以一边接受教育一边打工，可以选择自己当老板，可以拿钱去投资而不买房子，可以……</p>
+<h1 id="四"><a href="#四" class="headerlink" title="四"></a>四</h1><p>程序内核和程序代码究竟有什么关系呢？一个人脑海中的程序代码和程序内核是紧密相连的。程序代码是程序内核的具体实现，由程序内核扩展而成；程序内核是程序代码的核心，是程序代码意义的来源。研究程序内核是从抽象的角度来分析程序，而研究程序代码是从具体的角度来分析程序。</p>
+<p>什么意思呢？以下举个例子简单分析一下。曾经看过一个故事是这样的：一个父亲有两个儿子，一个非常乐观，一个极度悲观。父亲觉得两个儿子的性格太极端，想刻意把他们的性格改变一下。他给悲观的那个儿子买了很多好玩的玩具，想让他开心一点；把乐观的儿子关到一间脏兮兮的马房里，想让他情绪低落一点。但他发现，悲观的儿子坐在玩具旁边哭泣，父亲问他怎么了，他说这些玩具一玩就会坏的；然后父亲去看乐观的儿子，发现他在兴高采烈地蹲在马粪桶旁边，父亲问他正在干什么，他很高兴地说这里面肯定有一匹小马。这个例子告诉我们，人和人脑海里的程序有多么大的差异！“拥有新玩具－ &gt; 联想到新玩具被玩坏－ &gt; 开始哭泣”（具体角度），“被关到到处都是马粪的马房－ &gt; 想到可能找到一匹小马－ &gt; 开始兴奋”（具体角度），那是两份差别极大的程序代码，反映出悲观（抽象角度）和乐观（抽象角度）两个完全相反的程序内核。对于那个乐观的儿子，无论身处顺境逆境，总能看到正面的东西，产生积极的心态，一心一意把事情办好，是因为他拥有乐观（抽象角度）的程序内核，该内核会在不同的情况下衍生出不同的程序代码（具体角度），但那些程序代码都具备乐观的属性。而对于那个悲观的儿子，就如叔本华一样，因为其程序内核是悲观（抽象角度）的，所以无论遇到什么好事，都只会产生悲观的程序代码（具体角度）。太多人总喜欢羡慕别人，总觉得别人就是比自己幸运，而自己遇到的永远是厄运，面对相同的状况，别人总能得到好的结果，而自己总是诸事不顺，就是看不到自己和别人的本质区别，看不到自己的程序和别人的程序差别有多大。不小心撒了半杯水的时候，你是为剩下半杯而欢呼的那个人，还是为失去了半杯而哭泣的那个人？以上以乐观和悲观对比分析了一下如何根据一个人说的话和做的事来分析其程序代码和程序内核，其他情况以此类推。</p>
+<p>在程序内核那节（第 2 节） 我提及了三个模块（世界观、价值观及人生观），目的只是为程序内核分析建立一个参照系（此参照系可以根据个人情况适当地缩小或扩充），让读者知道应该考察什么内容（这个人对世界有什么看法？这个人的价值观是怎样的？这个人的人生观是怎样的？这个人的爱情观是怎样的？这个人的婚姻观是怎样的？这个人的道德观是怎样的？……）。这个世界上几乎任何东西都有源头，什么样的程序内核会衍生出什么样的程序代码。只要弄清楚了一个人的程序内核，便可以推测这个人在各种情况下的程序代码，虽然不是 100 ％准确，不过对的机会极大。</p>
+<h1 id="五"><a href="#五" class="headerlink" title="五"></a>五</h1><p>如果我们把一个人脑海中的所有程序封装，使其成为一个黑盒子，每当我们向黑盒子输入一点东西，经过运算处理，它会输出结果。当一个人面对某种情况，经过思考总会作出某种反应。面对某种情况对应程序的输入，思考的过程对应程序代码的运算过程，作出某种反应对应程序的输出。如果面对相同的输入，两个黑盒子产生不同的输出，原因在于它们内部的程序代码以及程序内核均不同。也就是说，我们可以根据一个人说的话，做的事情，来确定其程序代码与程序内核。前面举了一些简单的程序例子，而人的脑海里的程序几乎是无穷无尽的。通过分析一个人的“程序内核”（世界观、价值观、人生观等等），通过分析一个人的“程序代码”（这个人对各种问题作什么判断，下什么结论），是可以深刻了解一个人的。让你了解一个人（包括自己），这就是程序分析的意义。</p>
+<p>凡事应从根本入手，能够牢牢抓住本质是一种本领，也是一份财富。不要总是相信别人说的话，要自己挖掘别人的“潜台词”，要“听其言，观其行”。用心去观察一个人的行为，用心去听一个人的语言，一定可以“榨”出他（她）脑海中的程序。一旦拿到了一个人脑海里程序的源程序，你可以通过分析得到程序内核，进而对这个人的行为作出判断了。在正常情况下，也就是在程序不出错的时候，对的概率是 99 ％。</p>
+<p>我觉得和别人交往的过程中，要尽可能挖掘每一个人脑海中的程序，挖掘得越多，你对你的朋友越了解。史家有云，良史必有四长：才、学、识、德。虽然我不是搞历史研究的，但我喜欢用这四点作为一个简单的框架去了解一个人。在和别人交往的过程中，我会尽量弄清楚，这个人是不是一个人有才华的人，是不是一个知识丰富的人，是不是一个有卓越识见的人，是不是一个有品德的人。对这些资料越清楚，对自己的人生有越大的帮助。因为人生存于社会上，不可能是孤立的，总要和人交往。交往就要和上进优秀的人交往，那些堕落以及浑浑噩噩的人最好离他们远远的。我个人十分不喜欢不讲道德的人，通过一个人的语言，我可以知道自己可以和他（她）走得多近。有人说，道德过时了，是枷锁，甚至是虚伪的外衣。我不想和那些人争论什么，因为大家不是一个世界的人。不知道那些人有没有想过，传统道德依然是社会的主要组成部分，如果不想被社会抛弃，自己能离传统道德多远？但我不想作过多的价值判断，这就引出我的主题：物以类聚，人以群分。</p>
+<p>据说临近香港的某个城市是中国婚外情最多的城市，男女关系极为混乱。对于那些搞婚外情的人，他们的程序内核和程序代码都是差不多的。从程序内核来看，他们几乎都是不负责任的人，几乎都是不讲道德的人。从程序代码来看，他们脑海里的代码几乎都是“婚外情对象出现－ &gt; 心动－ &gt; 追求婚外情对象及向丈夫（妻子）撒谎－ &gt; 和对象幽会及向丈夫（妻子）撒谎－ &gt; 厌倦婚外情对象－ &gt; 抛弃婚外情对象”。那是一段周而复始不断循环的程序，只要依然运行在一个人的脑海，他（她）总会找到借口来为自己辩护。例如“和丈夫（妻子）感情已经变淡”、“真爱来临了是无法抵挡的” 、“一个人总不可能不犯错”等等。根据这些借口，又可以扯出一大串代码，继续通过分析程序核心和程序代码，对此人又可以进一步了解，对其行为可以进行更准确的判断。不知道我的想法是太前卫还是太落后，我觉得现代的人根本不懂得如何谈恋爱。一般人在恋爱时只顾着享受恋爱的甜蜜，却不知道谈恋爱的其中一样很重要任务就是了解对方，也就是程序分析。如果你想要一个让自己幸福的伴侣，你绝对不可以不了解对方，绝对不可以不详细检查对方脑海里的程序。大部分人谈恋爱的时间是两到三年，当两三年过后，你应该对对方脑海里的程序内核和程序代码很清楚了。如果还弄不清楚，或者发现对方脑海里的程序内核以及程序代码糟糕得一塌糊涂，千万千万不要和他（她）结婚，因为他（她）很可能给不了你幸福，至少此刻的他（她）是不可能给你幸福的，除非他（她）脑海里的程序核心以及程序代码完全被改写。如果一个人对婚姻不怎么向往，他（她）无法经营好婚姻；如果一个人不讲道德，他（她）每年出轨 100 次也不会让我惊讶；如果一个人不相信爱情，他（她）和别人之间不可能存在真爱。有的人整天搜集“废除婚姻制度”的理由，还出“第一版”、“第二版”等等，如果你是女人，你要不要嫁给那样的一个男人？他可能给你幸福吗？不可能的。我也看到有的女人在文章里说起自己的老公向自己保证，两年内不会出轨，但超过两年就无法保证了。一个说出这样的话的男人，会是一个好老公吗？不可能的。为什么？因为“两年之后－ &gt; 可以出轨”这就是他脑海里的程序代码，两年之后就会开始运行。假如一个上司有两个下属，其中下属 A 脑海里的程序代码是“做错事－ &gt; 找借口－ &gt; 推卸责任”，另一个下属脑海里的程序代码是“做错事－ &gt; 承认错误－ &gt; 找失败原因－ &gt; 想办法补救”，上司一旦检测到这段代码，会重用 A 还是重用 B ？当然是 B 了，因为 B 的程序代码折射出 B 的程序内核是一个负责以及积极的人， B 的身上有比 A 优胜的程序代码。似乎我又开始进行价值判断了，好吧，我不再说孰优孰劣，只说选择。</p>
+<p>我们可以完全不对代码进行比较和评价，但我们一定要知道一样东西：程序和行为的关联。例如 A 常常发表自由言论：“某某案例是一个成功的婚外情例子”，而 B 总是强调“婚外情是对婚姻的极度不尊重”，那么 A 很可能会搞婚外情，而 B 很可能不会搞婚外情；如果面对“给你 5000 万让你老婆陪别人过一晚”这样的问题， C 举棋不定、犹豫不决，而 D 视其为奇耻大辱，认为再加 5000 万也没商量，那么 C 和 D 谁更可能是个爱老婆的好老公？如果 E 认为爱情不存在， F 认为爱情存在，你说爱情出现在 E 生命里的机会大一点还是出现在 F 生命里的机会大一点？……如果你要选个好老公，类似 A 、 C 、 E 之类的男人可以马上踢出局了，留下 B 、 D 、 F 这样的男人慢慢观察，然后继续检测他们脑海中的程序，然后继续筛选和淘汰。“物以类聚，人以群分”是我常常说的一句话，因为代码接近的人有更多的共同语言。唾弃道德的人看不起崇尚道德的人，认为他们是伪君子；崇尚道德的人也看不起唾弃道德的人，认为他们道德败坏。谁是正确的，谁是错误的，谁更优秀，谁更差劲这类问题我们可以完全不讨论，但是我们却可以看到两个泾渭分明的圈子。一个人脑海里的代码把是将其归类到一个个小圈子里面的依据，知道如何判断一个人在哪个问题上属于哪个小圈子，就已足够。</p>
+<h1 id="六"><a href="#六" class="headerlink" title="六"></a>六</h1><p>如果明白了程序核心和程序代码是如何影响一个人，以及它们的重要性，现在是时候想想自己究竟可以做点什么了。我们都知道，环境对一个人影响是很大的。例如父母婚姻很幸福的小孩，往往也是向往婚姻的；一个在家庭气氛很不融洽的家庭长大的小孩，往往是脾气古怪的；一个父母都是高级知识分子的孩子，往往都是极有教养的；一个在男女关系极随便的环境里长大的人，往往也是不太忠贞的人……环境造就人是表面的现象，本质在于环境时刻都在向人脑写入程序代码，塑造程序的内核。人应该意识到这一点，并且要时刻检测自己脑海里的程序，评估自己的程序内核，多了解自己，多向优秀的人学习并且随时准备向自己的脑子写入更优的程序。</p>
+<p>这篇文章最重要的目的，不仅仅是想告诉你“一个人脑海里的程序是会影响自己的人生的”，更希望每一个人都立志当个优秀的程序员，编写自己的程序，掌握自己的人生。至于能否当个程序员，如何当个优秀程序员，那又是另外的课程了。</p>
+<p>（全文完）</p>
+<p>2005年1月14日2点32分于墨尔本</p>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2005/11/23/qian_tan_ren_sheng_3_shang/" rel="next" title="浅谈人生（三）－－程序人生（上）">
+                <i class="fa fa-chevron-left"></i> 浅谈人生（三）－－程序人生（上）
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2005/11/23/ai_qing_duo_shao_bei_ju_jia_ni_zhi_ming/" rel="prev" title="爱情，多少悲剧假你之名">
+                爱情，多少悲剧假你之名 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/default_avatar.jpg"
+               alt="Eric Rong" />
+          <p class="site-author-name" itemprop="name">Eric Rong</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">121</span>
+              <span class="site-state-item-name">Artikel</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">Kategorien</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">Tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#三"><span class="nav-number">1.</span> <span class="nav-text">三</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四"><span class="nav-number">2.</span> <span class="nav-text">四</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五"><span class="nav-number">3.</span> <span class="nav-text">五</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#六"><span class="nav-number">4.</span> <span class="nav-text">六</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Eric Rong</span>
+</div>
+
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=0.5.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
